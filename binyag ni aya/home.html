@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Aya's 1st Birthday & Baptism</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- MAIN CONTENT -->
+
+    <div class="container">
+      <!-- AYA PHOTO -->
+      <div class="photo-frame">
+        <img src="aya.jpg" alt="Aya" />
+      </div>
+
+      <h1>WELCOME</h1>
+
+      <h2>TO AYA'S</h2>
+
+      <h3>1ST BIRTHDAY & CHRISTENING</h3>
+
+      <p class="message">
+        Our little princess is turning ONE! 👑
+        <br />
+        Come and celebrate this wonderful day with us! 💕
+        <br />
+        Water, oil, light, and a garment are the core universal symbols of Christian baptism.
+        <br />
+        Representing cleansing, Spiritual strength, new life, and Christ's presence
+      </p>
+      
+      
+
+      <!-- CLICK BUTTON -->
+
+      <div class="button-group">
+  <button class="main-button" onclick="celebrate()">
+    CLICK ME 💗
+</button>
+
+<button class="music-button" onclick="window.top.toggleMusic()">
+    🎵 Play Music
+</button>
+</div>
+
+    <!-- JAVASCRIPT -->
+
+  <script>
+  /* CELEBRATION SHOWER */
+
+  function celebrate() {
+
+    // Start music
+    if (window.top.startMusic) {
+      window.top.startMusic();
+    }
+
+    // Disable button
+    const button = document.querySelector(".main-button");
+
+    button.disabled = true;
+    button.innerHTML = "🎉 CELEBRATING! 🎉";
+
+    // Objects that will fall
+    const decorations = [
+      "🍬",
+      "🍭",
+      "🌸",
+      "🌺",
+      "🌷",
+      "❤️",
+      "💕",
+      "💗",
+      "💖",
+      "🎈",
+      "🎀",
+      "✨"
+    ];
+
+    // Create falling objects
+    for (let i = 0; i < 100; i++) {
+
+      const item = document.createElement("div");
+
+      item.classList.add("celebration-item");
+
+      item.innerHTML =
+        decorations[
+          Math.floor(Math.random() * decorations.length)
+        ];
+
+      item.style.left = Math.random() * 100 + "vw";
+
+      item.style.fontSize =
+        20 + Math.random() * 35 + "px";
+
+      item.style.animationDuration =
+        2 + Math.random() * 2.5 + "s";
+
+      item.style.animationDelay =
+        Math.random() * 2.5 + "s";
+
+      item.style.setProperty(
+        "--rotation",
+        Math.random() * 720 - 360 + "deg"
+      );
+
+      document.body.appendChild(item);
+
+      setTimeout(() => {
+        item.remove();
+      }, 6000);
+    }
+
+    // Go to next page
+    setTimeout(() => {
+
+      const pages = window.top.document.getElementById("ayaPages");
+
+      if (pages) {
+        pages.src = "next.html";
+      }
+
+    }, 3500);
+  }
+</script>
+  </body>
+</html>

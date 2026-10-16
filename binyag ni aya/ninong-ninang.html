@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ninong & Ninang</title>
+
+    <style>
+      body {
+        min-height: 100vh;
+        margin: 0;
+        padding: 35px 20px;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+        font-family: "Times New Roman", Times, serif;
+
+        background:
+          linear-gradient(rgba(255, 182, 193, 0.2), rgba(255, 182, 193, 0.2)),
+          url("aya.jpg");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        color: #d6336c;
+        margin-bottom: 35px;
+        font-size: 35px;
+      }
+
+      .godparents-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      .godparent-box {
+        width: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        box-sizing: border-box;
+      }
+
+      .godparent-box h2 {
+        color: #d6336c;
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 27px;
+      }
+
+      .godparent-name {
+        background: #0000;
+        color: #d13784;
+        padding: 13px;
+        margin: 10px 0;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .godparent-name:hover {
+        transform: scale(1.05);
+        background: #ffd6e5;
+      }
+
+      .eventdetails-button {
+        display: inline-block;
+        margin-top: 35px;
+        padding: 13px 25px;
+        background: #d6336c;
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: bold;
+        justify-content: center;
+      }
+
+      .eventdetails-button:hover {
+        background: #b52b59;
+      }
+      .button-group {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      @media (max-width: 700px) {
+        .godparents-container {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .godparent-box {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>💗Aya's Godparents💗</h1>
+
+    <div class="godparents-container">
+      <div class="godparent-box">
+        <h2>🤵 NINONG</h2>
+
+        <div id="ninong-list"></div>
+      </div>
+
+      <div class="godparent-box">
+        <h2>👰 NINANG</h2>
+
+        <div id="ninang-list"></div>
+      </div>
+    </div>
+
+    <a href="event-details.html" target="ayaPages" class="eventdetails-button">
+      🎉 Event Details
+    </a>
+
+    <script>
+      const ninong = [
+        "Mr. Den R. Basco Jr",
+        "Mr. Ryan Christian R. Gonzales",
+        "Mr. Lance Arvin R. Merced",
+        "Mr. Jomar Dulay",
+        "Atty. Eretzsel  Valle",
+        "Mr. Jaycel Q. Aragon",
+        "Mr. Jerome Bautista",
+        "Mr. Hero Escobar",
+        "Mr. Danilo Molina",
+        "Mr. Rengie Ramos",
+        "Mr. Kevin Dela Torre",
+        "Mr. Joseph Domingo",
+        "Mr. Patrick Tara",
+        "Mr. Alvin Layco",
+        "Mr. Jeffrey Marzan",
+        "Mr. Jayson Amatorio",
+        "Mr. Renz Louie Gusto",
+      ];
+
+      const ninang = [
+        "Ms. Mikaella Jane N. Dungallo",
+        "Ms. Mary Eunice R. Bitong",
+        "Ms. Princess Olyn Ruzol",
+        "Ms. Manilyn B. Diaz",
+        "Ms. Richelle Ann Sotero",
+        "Ms. Maria Cristina R. Basco",
+        "Ms. Maricel Miranda",
+        "Ms. SheryMar R. Castillo",
+        "Ms. Jingle Larioza",
+        "Ms. Shanie Rose M. Ruzol",
+      ];
+
+      // RANDOMIZE / SCRAMBLE
+      function shuffle(array) {
+        let currentIndex = array.length;
+
+        while (currentIndex != 0) {
+          let randomIndex = Math.floor(Math.random() * currentIndex);
+
+          currentIndex--;
+
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex],
+            array[currentIndex],
+          ];
+        }
+
+        return array;
+      }
+
+      // DISPLAY NINONG
+      shuffle(ninong);
+
+      const ninongList = document.getElementById("ninong-list");
+
+      ninong.forEach(function (name) {
+        const div = document.createElement("div");
+
+        div.className = "godparent-name";
+
+        div.innerHTML = "💙 " + name;
+
+        ninongList.appendChild(div);
+      });
+
+      // DISPLAY NINANG
+      shuffle(ninang);
+
+      const ninangList = document.getElementById("ninang-list");
+
+      ninang.forEach(function (name) {
+        const div = document.createElement("div");
+
+        div.className = "godparent-name";
+
+        div.innerHTML = "🌸 " + name;
+
+        ninangList.appendChild(div);
+      });
+    </script>
+  </body>
+</html>

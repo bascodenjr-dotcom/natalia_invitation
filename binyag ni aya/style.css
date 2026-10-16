@@ -1,0 +1,643 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  font-family: "Times New Roman", Times, serif;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at top left, #ffd6e7, transparent 35%),
+    radial-gradient(circle at bottom right, #ffc1dc, transparent 40%),
+    linear-gradient(135deg, #fff0f7, #ffd7e8);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background-image: url("aya.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* MAIN BOX */
+.container {
+  background: rgba(225, 225, 225, 0.5);
+  padding: 60px;
+  border-radius: 20px;
+}
+
+/* PHOTO */
+
+.photo-frame {
+  width: 190px;
+
+  height: 190px;
+
+  margin: 0 auto 20px;
+
+  padding: 6px;
+
+  border-radius: 30%;
+
+  background: linear-gradient(135deg, #ff4f91, #ffd1e3, #ff79aa);
+}
+
+.photo-frame img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 30%;
+
+  border: 5px solid white;
+}
+
+/* TEXT */
+
+h1 {
+  color: #d6336c;
+  margin: 0 auto 30px;
+  font-size: 35px;
+  text-align: center;
+  width: 100%;
+}
+
+h2 {
+  color: #d95782;
+
+  margin: 5px;
+}
+
+h3 {
+  color: #f04f89;
+
+  font-size: 40px;
+}
+
+.message {
+  color: #000000;
+
+  font-size: 40px;
+
+  line-height: 1.6;
+}
+
+/* MAIN BUTTON */
+/* ==========================
+   BUTTONS
+========================== */
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* MAIN CLICK ME BUTTON */
+
+.main-button {
+  padding: 15px 35px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: linear-gradient(135deg, #ff4f91, #ff79aa);
+
+  color: white;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(236, 79, 135, 0.35);
+
+  transition: 0.3s ease;
+}
+
+.main-button:hover {
+  transform: scale(1.1);
+
+  box-shadow: 0 10px 25px rgba(236, 79, 135, 0.45);
+}
+
+.main-button:disabled {
+  cursor: default;
+
+  transform: scale(1.05);
+
+  opacity: 0.9;
+}
+
+/* MUSIC BUTTON */
+
+.music-button {
+  padding: 15px 25px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: linear-gradient(135deg, #d95782, #ec4f87);
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(217, 87, 130, 0.3);
+
+  transition: 0.3s ease;
+}
+
+.music-button:hover {
+  transform: scale(1.08);
+
+  box-shadow: 0 10px 25px rgba(217, 87, 130, 0.4);
+}
+
+/* MUSIC BUTTON */
+
+#musicButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #d6336c;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+#musicButton:hover {
+  transform: scale(1.05);
+}
+
+/* ==================================
+   FALLING CELEBRATION
+================================== */
+
+.celebration-item {
+  position: fixed;
+
+  top: -80px;
+
+  z-index: 9999;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  animation-name: celebrationFall;
+
+  animation-timing-function: linear;
+
+  animation-fill-mode: forwards;
+}
+
+@keyframes celebrationFall {
+  0% {
+    transform: translateY(-100px) rotate(0deg) translateX(0);
+
+    opacity: 1;
+  }
+
+  25% {
+    transform: translateY(25vh) rotate(180deg) translateX(50px);
+
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(50vh) rotate(360deg) translateX(-50px);
+
+    opacity: 1;
+  }
+
+  75% {
+    transform: translateY(75vh) rotate(540deg) translateX(50px);
+
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(720deg) translateX(-50px);
+
+    opacity: 0;
+  }
+}
+/* ==========================
+   NINONG & NINANG
+========================== */
+
+.godparent-box {
+  margin: 25px auto;
+
+  padding: 20px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: linear-gradient(135deg, #ff4f91, #ff79aa);
+
+  color: white;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(236, 79, 135, 0.35);
+
+  transition: 0.3s ease;
+
+  max-width: 450px;
+}
+
+.godparent-box h2 {
+  color: #df4f82;
+
+  margin-bottom: 15px;
+
+  font-size: 28px;
+}
+
+.name-list {
+  text-align: center;
+}
+
+.name-list p {
+  margin: 10px 0;
+
+  padding: 10px 15px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  color: #694554;
+
+  font-size: 17px;
+
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+.name-list p:hover {
+  transform: translateX(8px);
+
+  background: #fff0f6;
+}
+
+.godparent-name {
+  display: block;
+
+  width: 100%;
+
+  padding: 12px;
+
+  margin: 8px 0;
+
+  background: #fff0f6;
+
+  border-radius: 12px;
+
+  color: #694554;
+
+  font-size: 17px;
+
+  transition: 0.3s;
+}
+
+.godparent-name:hover {
+  transform: translateX(10px);
+
+  background: #ffd9e8;
+}
+
+/* ==============================
+   EVENT DETAILS
+============================== */
+
+.invitation-container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  background: linear-gradient(135deg, #ffe4ec, #fff5f8);
+  font-family: "Times New Roman", Times, serif;
+}
+
+.invitation-container h1 {
+  color: #d6336c;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.invitation-container h2 {
+  color: #b52b59;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+/* Event information box */
+.event-box {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(255, 244, 244, 0.5);
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(211, 190, 190, 0.5);
+}
+
+.event-box p {
+  margin: 12px 0;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 40px;
+}
+
+.event-box p strong {
+  display: block;
+  color: #d6336c;
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+/* Buttons */
+.next-button {
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 14px 25px;
+  background: #d6336c;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.next-button:hover {
+  background: #b52b59;
+  transform: scale(1.05);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .invitation-container {
+    padding: 30px 15px;
+  }
+
+  .invitation-container h1 {
+    font-size: 40px;
+  }
+
+  .invitation-container h2 {
+    font-size: 40px;
+  }
+
+  .event-box {
+    padding: 22px 15px;
+  }
+
+  .event-box p {
+    font-size: 40px;
+  }
+
+  .next-button {
+    display: block;
+    margin: 12px auto;
+    max-width: 250px;
+  }
+
+  /* BUTTON GROUP */
+  .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px auto;
+  }
+  .back-button,
+  .event-button {
+    display: inline-block;
+    background: #d9366f;
+    color: white;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .back-button:hover,
+  .event-button:hover {
+    background: #c42d62;
+    justify-content: center;
+  }
+
+  /* CLICK ME BUTTON */
+  .main-button,
+  .music-button,
+  .button-group a,
+  .button-group button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-width: 180px;
+    padding: 18px 30px;
+
+    background: #e83e80;
+    color: white !important;
+
+    border: none;
+    border-radius: 50px;
+
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none !important;
+
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(232, 62, 128, 0.2);
+
+    transition: all 0.3s ease;
+  }
+
+  /* HOVER EFFECT */
+  .main-button:hover,
+  .music-button:hover,
+  .button-group a:hover,
+  .button-group button:hover {
+    background: #ff5c9c;
+    color: white !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(232, 62, 128, 0.35);
+  }
+
+  /* CLICK EFFECT */
+  .main-button:active,
+  .music-button:active,
+  .button-group a:active,
+  .button-group button:active {
+    transform: scale(0.95);
+  }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
+    .button-group {
+      gap: 10px;
+    }
+
+    .main-button,
+    .music-button,
+    .button-group a,
+    .button-group button {
+      min-width: 150px;
+      padding: 14px 20px;
+      font-size: 15px;
+    }
+  }
+}
+
+/* FIX: NINONG, EVENT DETAILS, AND OTHER LINKS */
+
+a {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  background: #e83e80 !important;
+  color: white !important;
+
+  padding: 15px 30px !important;
+  border: none !important;
+  border-radius: 50px !important;
+
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+
+  text-decoration: none !important;
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(232, 62, 128, 0.2);
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  background: #ff5c9c !important;
+  color: white !important;
+  transform: translateY(-3px);
+}
+
+a:active {
+  transform: scale(0.95);
+}
+
+/* EVENT DETAILS BOX BACKGROUND */
+.invitation {
+  width: min(90%, 650px);
+  max-height: 92vh;
+  overflow-y: auto;
+  margin: auto;
+  padding: 25px 30px;
+
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 20px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  text-align: center;
+}
+
+/* EVENT DETAILS TITLE */
+.invitation h1 {
+  font-size: clamp(28px, 4vw, 38px);
+  margin: 0 0 12px;
+}
+
+/* BIRTHDAY AND BAPTISM HEADINGS */
+.invitation h2 {
+  font-size: 22px;
+  margin: 12px 0;
+}
+
+/* EVENT INFORMATION */
+.invitation p {
+  font-size: 21px;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+/* MOBILE SCREEN */
+@media (max-width: 600px) {
+  .invitation {
+    width: 92%;
+    padding: 20px 16px;
+  }
+
+  .invitation h1 {
+    font-size: 27px;
+  }
+
+  .invitation h2 {
+    font-size: 19px;
+  }
+
+  .invitation p {
+    font-size: 14px;
+  }
+}
+
+/* Center Aya's Godparents title */
+body h1 {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto 30px;
+}
